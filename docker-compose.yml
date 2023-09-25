@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:15.4-bullseye
+    hostname: MyPostgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: toshiki
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: nex
+    volumes:
+      - postgres-Mydata:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres-Mydata:
